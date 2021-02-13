@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illminate\Http\Request;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
