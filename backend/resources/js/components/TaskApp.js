@@ -9,7 +9,7 @@ const RenderRows = (props) => {
                 <td>{task.id}</td>
                 <td>{task.title}</td>
                 <td>{task.deadline}</td>
-                <td><button className="btn btn-secondary">complete</button></td>
+                <td><button className="btn btn-secondary" onClick={() => props.handleDelete(task)}>complete</button></td>
             </tr>
         );
     });
@@ -26,6 +26,7 @@ export default class TaskApp extends Component
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
@@ -75,6 +76,22 @@ export default class TaskApp extends Component
         })
     }
 
+    handleDelete(task) {
+        axios.post('/api/deleteTask', {
+            id: task.id
+        })
+        .then((response) => {
+            this.setState(
+                {
+                    tasks: response.data
+                }
+            );
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -96,7 +113,10 @@ export default class TaskApp extends Component
                         </tr>
                     </thead>
                     <tbody>
-                        <RenderRows tasks={this.state.tasks} />
+                        <RenderRows
+                            tasks={this.state.tasks}
+                            handleDelete={this.handleDelete}
+                        />
                     </tbody>
                 </table>
             </React.Fragment>

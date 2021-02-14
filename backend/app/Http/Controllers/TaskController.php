@@ -23,4 +23,13 @@ class TaskController extends Controller
         $tasks = Task::all();
         return $tasks;
     }
+
+    public function delete(Request $request)
+    {
+        $task = Task::find($request->id);
+        $task->delete();
+
+        $tasks = Task::all();
+        return $tasks;
+    }
 }
