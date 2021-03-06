@@ -6,9 +6,7 @@ class Content
 {
     private $content;
 
-    public function __construct(
-        string $content
-    ) {
+    public function __construct(string $content) {
         $this->content = $content;
     }
 

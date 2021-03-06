@@ -6,8 +6,7 @@ class BlogTag
 {
     private $tag;
 
-    public function __construct(string $tag)
-    {
+    public function __construct(string $tag) {
         $this->tag = $tag;
     }
 

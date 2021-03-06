@@ -6,9 +6,7 @@ class PublishedDateTime
 {
     private $dateTime;
 
-    public function __construct(
-        string $dateTime
-    ) {
+    public function __construct(string $dateTime) {
         $this->dateTime = $dateTime;
     }
 

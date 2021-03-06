@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\MicroCms;
+use App\UseCase\Blog\GetBlogListUseCase;
 
 class BlogController
 {
-    public function index()
+    public function index(GetBlogListUseCase $useCase)
     {
-        $service = new MicroCms();
-        $blogs = $service->get('blog');
+        $blogs = $useCase->getBlogList();
+        dd($blogs);
         return view('blog.index', ['blogs' => $blogs]);
     }
 }
