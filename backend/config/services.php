@@ -30,4 +30,7 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'microcms' => [
+        'api_key' => env('MICROCMS_API_KEY'),
+    ],
 ];

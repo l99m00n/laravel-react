@@ -18,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'IndexController@index');
+
+Route::get('/blog', 'BlogController@index')->name('blog-list');
+Route::get('/blog/{blogId}', 'BlogController@detail')->name('blog-detail');
