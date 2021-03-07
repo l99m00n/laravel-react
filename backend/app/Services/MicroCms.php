@@ -21,7 +21,10 @@ class MicroCms
 
     public function get(string $target, array $options = [])
     {
-        $response = $this->httpClient->get($target);
+        $response = $this->httpClient->get(
+            $target,
+            ['query' => $options]
+        );
         $body = $response->getBody();
         if (empty($body)) {
             return null;

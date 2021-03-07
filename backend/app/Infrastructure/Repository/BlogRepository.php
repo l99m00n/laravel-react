@@ -24,35 +24,46 @@ class BlogRepository implements BlogRepositoryInterface
         $apiBlogs = (new MicroCms())->get('blog');
         $contents = $apiBlogs['contents'];
         foreach ($contents as $apiBlog) {
-            $tagList = new TagList();
-            foreach ($apiBlog['tag'] as $apiTag) {
-                $tagList->add(new BlogTag($apiTag));
-            }
-
-            // microCMSブログには画像は1枚しか登録できないかも？
-            $imageList = new ImageList();
-            $imageList->add(new BlogImage(
-                $apiBlog['image']['url'],
-                $apiBlog['image']['height'],
-                $apiBlog['image']['width']
-            ));
-            $blog = new Blog(
-                new BlogId($apiBlog['id']),
-                new Title($apiBlog['title']),
-                new Content($apiBlog['content']),
-                $tagList,
-                $imageList,
-                new PublishedDateTime($apiBlog['publishedAt'])
-            );
-            $blogList->add($blog);
+            $blogList->add($this->buildBlog($apiBlog));
         }
 
         return $blogList;
     }
 
-    public function getBlog(int $id): Blog
+    public function getBlog(string $id): Blog
     {
-        $blog = new Blog();
+        $apiBlog = (new MicroCms())->get('blog', ['ids' => $id]);
+        // TODO 不正なid指定の対応
+        return $this->buildBlog($apiBlog['contents'][0]);
+    }
+
+    private function buildBlog(array $apiBlogContents)
+    {
+        $tagList = new TagList();
+        foreach ($apiBlogContents['tag'] as $apiTag) {
+            $tagList->add(new BlogTag($apiTag));
+        }
+
+        // microCMSブログには画像は1枚しか登録できないかも？
+        // 画像は設定されていないこともある。
+        $imageList = new ImageList();
+        if (isset($apiBlogContents['image'])) {
+            $imageList->add(new BlogImage(
+                $apiBlogContents['image']['url'],
+                $apiBlogContents['image']['height'],
+                $apiBlogContents['image']['width']
+            ));
+        }
+
+        $blog = new Blog(
+            new BlogId($apiBlogContents['id']),
+            new Title($apiBlogContents['title']),
+            new Content($apiBlogContents['content']),
+            $tagList,
+            $imageList,
+            new PublishedDateTime($apiBlogContents['publishedAt'])
+        );
+
         return $blog;
     }
 }

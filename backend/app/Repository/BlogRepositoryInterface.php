@@ -8,5 +8,5 @@ use App\DomainModel\Blog\BlogList;
 interface BlogRepositoryInterface
 {
     public function getBlogList(): BlogList;
-    public function getBlog(int $id): Blog;
+    public function getBlog(string $id): Blog;
 }

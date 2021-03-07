@@ -1,7 +1,7 @@
 <h1>Blog List</h1>
 <hr>
 @foreach ($blogs as $blog)
-    <p>{{ $blog->title() }}</p>
+    <a href={{ route('blog-detail', ['blogId' => $blog->id()]) }}>{{ $blog->title() }}</p>
     <p>
         @foreach($blog->tagList() as $tag)
             <span>{{ $tag->tag() }}</span>
