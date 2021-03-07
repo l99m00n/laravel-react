@@ -9,7 +9,6 @@ class BlogController
     public function index(GetBlogListUseCase $useCase)
     {
         $blogs = $useCase->getBlogList();
-        dd($blogs);
-        return view('blog.index', ['blogs' => $blogs]);
+        return view('blog.index', ['blogs' => $blogs->list()]);
     }
 }

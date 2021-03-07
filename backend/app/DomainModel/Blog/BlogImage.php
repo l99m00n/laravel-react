@@ -28,7 +28,7 @@ class BlogImage
         return $this->height;
     }
 
-    public function weight(): int
+    public function width(): int
     {
         return $this->width;
     }

@@ -29,7 +29,7 @@ class Blog
         $this->published = $publishedDateTime;
     }
 
-    public function id(): int
+    public function id(): string
     {
         return $this->blogId->id();
     }
