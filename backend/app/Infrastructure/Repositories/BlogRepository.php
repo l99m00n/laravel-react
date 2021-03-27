@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Infrastructure\Repository;
+namespace App\Infrastructure\Repositories;
 
 use App\Services\MicroCms;
-use App\DomainModel\Blog\Blog;
-use App\DomainModel\Blog\Title;
-use App\DomainModel\Blog\BlogId;
-use App\DomainModel\Blog\BlogTag;
-use App\DomainModel\Blog\Content;
-use App\DomainModel\Blog\TagList;
-use App\DomainModel\Blog\BlogList;
-use App\DomainModel\Blog\BlogImage;
-use App\DomainModel\Blog\ImageList;
-use App\DomainModel\Blog\PublishedDateTime;
-use App\Repository\BlogRepositoryInterface;
+use App\Entities\Blog\Blog;
+use App\Entities\Blog\Title;
+use App\Entities\Blog\BlogId;
+use App\Entities\Blog\BlogTag;
+use App\Entities\Blog\Content;
+use App\Entities\Blog\TagList;
+use App\Entities\Blog\BlogList;
+use App\Entities\Blog\BlogImage;
+use App\Entities\Blog\ImageList;
+use App\Entities\Blog\PublishedDateTime;
+use App\Repositories\BlogRepositoryInterface;
 
 class BlogRepository implements BlogRepositoryInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\UseCase\Blog;
+namespace App\UseCases\Blog;
 
-use App\DomainModel\Blog\BlogList;
-use App\Repository\BlogRepositoryInterface;
+use App\Entities\Blog\BlogList;
+use App\Repositories\BlogRepositoryInterface;
 
 class GetBlogListUseCase
 {

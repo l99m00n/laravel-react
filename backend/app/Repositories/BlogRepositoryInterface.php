@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repositories;
 
-use App\DomainModel\Blog\Blog;
-use App\DomainModel\Blog\BlogList;
+use App\Entities\Blog\Blog;
+use App\Entities\Blog\BlogList;
 
 interface BlogRepositoryInterface
 {

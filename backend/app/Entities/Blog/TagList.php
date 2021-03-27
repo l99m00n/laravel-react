@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DomainModel\Blog;
+namespace App\Entities\Blog;
 
-class ImageList
+class TagList
 {
     private $list;
 
@@ -11,9 +11,9 @@ class ImageList
         $this->list = [];
     }
 
-    public function add(BlogImage $image)
+    public function add(BlogTag $tag): void
     {
-        $this->list[] = $image;
+        $this->list[] = $tag;
     }
 
     public function list(): array

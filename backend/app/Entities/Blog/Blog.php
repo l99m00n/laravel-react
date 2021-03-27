@@ -1,8 +1,6 @@
 <?php
 
-namespace App\DomainModel\Blog;
-
-use App\DomainModel\Blog\BlogId;
+namespace App\Entities\Blog;
 
 class Blog
 {
