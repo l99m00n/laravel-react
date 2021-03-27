@@ -1,13 +1,13 @@
 <?php
 
-namespace App\UseCase\Blog;
+namespace App\UseCases\Blog;
 
-use App\DomainModel\Blog\Blog;
-use App\Repository\BlogRepositoryInterface;
+use App\Entities\Blog\Blog;
+use App\Repositories\BlogRepositoryInterface;
 
 class GetBlogUseCase
 {
-    private $blogRepository;
+    private BlogRepositoryInterface $blogRepository;
 
     public function __construct(BlogRepositoryInterface $blogRepository)
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DomainModel\Blog;
+namespace App\Entities\Blog;
 
 class Title
 {
-    private $title;
+    private string $title;
 
     public function __construct(string $title) {
         $this->title = $title;

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'IndexController@index');
+// Route::get('/', 'IndexController@index');
 
-Route::get('/blog', 'BlogController@index')->name('blog-list');
-Route::get('/blog/{blogId}', 'BlogController@detail')->name('blog-detail');
+Route::get('/', 'BlogController@index')->name('blog-list');
+Route::get('/{blogId}', 'BlogController@detail')->name('blog-detail');

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\UseCase\Blog\GetBlogUseCase;
-use App\UseCase\Blog\GetBlogListUseCase;
+use App\UseCases\Blog\GetBlogUseCase;
+use App\UseCases\Blog\GetBlogListUseCase;
 
 class BlogController
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DomainModel\Blog;
+namespace App\Entities\Blog;
 
 class BlogId
 {
-    private $id;
+    private string $id;
 
     public function __construct(string $id)
     {

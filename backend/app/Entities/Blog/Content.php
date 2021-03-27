@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DomainModel\Blog;
+namespace App\Entities\Blog;
 
 class Content
 {
-    private $content;
+    private string $content;
 
     public function __construct(string $content) {
         $this->content = $content;

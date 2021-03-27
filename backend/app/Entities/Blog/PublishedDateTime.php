@@ -1,10 +1,10 @@
 <?php
 
-namespace App\DomainModel\Blog;
+namespace App\Entities\Blog;
 
 class PublishedDateTime
 {
-    private $dateTime;
+    private string $dateTime;
 
     public function __construct(string $dateTime) {
         $this->dateTime = $dateTime;
