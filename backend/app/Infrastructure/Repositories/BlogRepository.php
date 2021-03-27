@@ -55,7 +55,7 @@ class BlogRepository implements BlogRepositoryInterface
             ));
         }
 
-        $blog = new Blog(
+        return new Blog(
             new BlogId($apiBlogContents['id']),
             new Title($apiBlogContents['title']),
             new Content($apiBlogContents['content']),
@@ -63,7 +63,5 @@ class BlogRepository implements BlogRepositoryInterface
             $imageList,
             new PublishedDateTime($apiBlogContents['publishedAt'])
         );
-
-        return $blog;
     }
 }

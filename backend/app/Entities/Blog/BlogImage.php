@@ -4,9 +4,9 @@ namespace App\Entities\Blog;
 
 class BlogImage
 {
-    private $path;
-    private $height;
-    private $width;
+    private string $path;
+    private int $height;
+    private int $width;
 
     public function __construct(
         string $url,

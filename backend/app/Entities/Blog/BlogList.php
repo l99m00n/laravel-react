@@ -4,7 +4,7 @@ namespace App\Entities\Blog;
 
 class BlogList
 {
-    private $list;
+    private array $list;
 
     public function __construct()
     {

@@ -4,12 +4,12 @@ namespace App\Entities\Blog;
 
 class Blog
 {
-    private $blogId;
-    private $title;
-    private $content;
-    private $tagList;
-    private $imageList;
-    private $published;
+    private BlogId $blogId;
+    private Title $title;
+    private Content $content;
+    private TagList $tagList;
+    private ImageList $imageList;
+    private PublishedDateTime $published;
 
     public function __construct(
         BlogId $blogId,

@@ -4,7 +4,7 @@ namespace App\Entities\Blog;
 
 class BlogId
 {
-    private $id;
+    private string $id;
 
     public function __construct(string $id)
     {

@@ -7,7 +7,7 @@ use App\Repositories\BlogRepositoryInterface;
 
 class GetBlogListUseCase
 {
-    private $blogRepository;
+    private BlogRepositoryInterface $blogRepository;
 
     public function __construct(BlogRepositoryInterface $blogRepository)
     {

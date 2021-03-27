@@ -4,7 +4,7 @@ namespace App\Entities\Blog;
 
 class BlogTag
 {
-    private $tag;
+    private string $tag;
 
     public function __construct(string $tag) {
         $this->tag = $tag;
